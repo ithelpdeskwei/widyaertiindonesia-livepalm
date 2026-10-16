@@ -1,0 +1,810 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0b0b;
+    color: #ffffff;
+}
+
+.page-logo {
+    position: absolute;
+    top: 30px;
+    left: 36px;
+    z-index: 2;
+}
+.page-logo img {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+
+.page-back {
+    position: absolute;
+    top: 30px;
+    right: 36px;
+    z-index: 2;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.page-back img {
+    width: 50px;
+    height: 50px;
+    display: block;
+}
+
+
+/* Section utama dengan background foto & overlay gelap */
+.layer-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+                url('../img/OC2-Layer2.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 60px 8%;
+}
+
+.layer-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+   background: linear-gradient(to top,
+        #234800 0%,
+        #234800 10%,
+        rgba(245,245,245,0) 60%);
+   z-index: 1;
+    pointer-events: none;
+}
+
+.outcome-label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Label kecil di kiri atas (OC 2 Layer 2) */
+.layer-label {
+    position: absolute;
+    top: 60px;
+    left: 8%;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.photo-section {
+    position: relative;
+    width: 100%;
+}
+.photo-full {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.7);
+}
+
+
+.photo-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+       background: linear-gradient(to bottom,
+        #234800 0%,
+        transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.photo-section::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 55%;
+    background: linear-gradient(to top,
+        rgba(0, 39, 104, 0.75) 0%,
+        rgba(0, 39, 104, 0.40) 45%,
+        rgba(0, 39, 104, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.photo-section {
+    position: relative;
+    width: 100%;
+}
+
+.photo-overlay-text {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    color: #ffffff;
+    z-index: 2;
+    padding: 0 20px;
+}
+.photo-overlay-text h2 {
+    font-size: 72px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.photo-overlay-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.photo-more {
+    background-color: rgba(255,255,255,0.25);
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.photo-more:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+
+/* Blok judul di tengah, dengan garis merah di atasnya */
+.layer-title-box {
+    text-align: center;
+    margin: 0 auto 60px auto;
+    max-width: 900px;
+}
+.layer-title-line {
+    width: 100%;
+    height: 5px;
+    background-color: #cc2b2b;
+    margin-bottom: 20px;
+}
+.layer-title-box h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+/* Baris kartu merah di bawah */
+.card-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.oc-card {
+    position: relative;
+    background-color: #cc2b2b;
+    border-radius: 14px;
+    width: 280px;
+    height: 180px;
+    padding: 14px 30px 60px 90px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.oc-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.oc-icon-img{
+width: 40px;
+
+
+}
+/* Ikon bulat yang menonjol keluar kartu (kiri) */
+.oc-icon {
+    position: absolute;
+    top: 40px;
+    left: -35px;
+    width: 100px;
+    height: 100px;
+    background-color: #cc2b2b;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+}
+
+/* Tombol More.... */
+.oc-more {
+    position: absolute;
+    bottom: 20px;
+    left: 90px;
+    background-color: rgba(255,255,255,0.25);
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 22px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.oc-more:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+.stats-section {
+    display: grid;
+    grid-template-columns: 0.7fr 1.2fr;
+    gap: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Kolom kiri */
+.stats-left {
+    display: flex;
+    flex-direction: column;
+}
+.stats-photo {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.stats-photo img {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gradasi biru WEI di bawah foto stats */
+.stats-photo::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background: linear-gradient(to top,
+        rgba(0, 39, 104, 0.85) 0%,
+        rgba(0, 39, 104, 0.45) 50%,
+        rgba(0, 39, 104, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stats-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+}
+.stats-number {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+.stats-label {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+.stats-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #cc2b2b;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    width: fit-content;
+}
+
+.stats-bar-text {   
+font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+.stats-overlay .stats-dot-img {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    object-fit: initial;
+}
+
+.stats-caption {
+    background-color: #0f2d5f; /* Background biru tetap utuh sampai ke tepi bawah */
+    color: #ffffff;
+    padding: 20px; /* Jarak luar area biru */
+    border-radius: 0 0 12px 12px;
+    text-align: center;
+    font-weight: 600 ;
+}
+
+/* Kotak bagian dalam yang diberi garis tepi (stroke putih) */
+.stats-caption-box {
+    border: 2px solid rgba(255, 255, 255, 0.4); /* Garis putih transparan */
+    border-radius: 24px; /* Sudut bingkai melengkung */
+    padding: 18px 22px; /* Jarak teks dari garis putih */
+    font-size: 1rem;
+    line-height: 1.5;
+}
+/* Kolom kanan */
+.stats-right {
+    display: flex;
+    align-items: stretch;
+}
+
+.quote-card {
+    position: relative;
+    width: 100%;
+    background-color: #d9d9d9;
+    border: 2px solid #cccccc;
+    border-radius: 16px;
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.quote-icon-img-open {
+    width: 40px; /* Sesuaikan angka ini untuk memperbesar/memperkecil gambar */
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+.quote-icon-img-close {
+    width: 40px; /* Sesuaikan angka ini untuk memperbesar/memperkecil gambar */
+    height: auto;
+    display: block;
+    margin-left: 450px;
+}
+
+.quote-mark {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #0f2d5f;
+    line-height: 1;
+    max-width: 60%;
+}
+.quote-mark-open {
+    align-self: flex-start;
+}
+.quote-mark-close {
+    align-self: flex-start;
+}
+.quote-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f2d5f;
+    line-height: 1.5;
+    max-width: 60%;
+    
+}
+.quote-author {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f2d5f;
+    line-height: 1.5;
+    max-width: 60%;
+    margin-top: 27px; /* sama dengan jarak <br><br> sebelumnya */
+}
+.quote-line {
+    width: 180px;
+    height: 4px;
+    background-color: #cc2b2b;
+    margin: 20px 0 20px 0;
+}
+.quote-slider {
+    position: relative;
+    width: 100%;
+}
+.quote-slide {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.quote-slide.active {
+    display: block;
+    opacity: 1;
+}
+.quote-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(15, 45, 95, 0.15);
+    color: #0f2d5f;
+    font-size: 1rem;
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+.quote-arrow:hover {
+    background-color: rgba(15, 45, 95, 0.3);
+}
+.quote-arrow-left {
+    left: 10px;
+}
+.quote-arrow-right {
+    right: 12px;
+}
+
+.quote-photo {
+    transition: opacity 0.6s ease;
+}
+.quote-photo.fading {
+    opacity: 0;
+}
+.quote-photo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: auto;
+    max-width: 40%;
+    object-fit: contain;
+    object-position: bottom right;
+    z-index: 1;
+}
+/* Bulatan dekoratif abu-abu di pojok kiri bawah quote card */
+.quote-decor-circle {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(150,150,150,0.3);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .stats-section {
+        grid-template-columns: 1fr;
+    }
+}
+/* Responsive untuk layar kecil */
+@media (max-width: 968px) {
+    .layer-label {
+        font-size: 1.8rem;
+        top: 30px;
+    }
+    .layer-title-box h1 {
+        font-size: 2rem;
+    }
+    .card-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .oc-card {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+/* ==========================================================
+   RESPONSIVE TAMBAHAN (laptop kecil, tablet, handphone)
+   ========================================================== */
+
+/* Judul foto "Participatory Mapping" ikut mengecil di layar yang lebih sempit */
+@media (max-width: 1200px) {
+    .photo-overlay-text h2 {
+        font-size: clamp(30px, 5.5vw, 72px);
+    }
+}
+
+/* Laptop kecil dan tablet landscape: kolom foto statistik lebih sempit, isinya diperkecil agar tidak terpotong */
+@media (max-width: 1200px) {
+    .stats-photo {
+        aspect-ratio: auto;
+        min-height: 440px;
+    }
+    .stats-number {
+        font-size: clamp(2.6rem, 4.5vw, 4rem);
+    }
+    .stats-label {
+        font-size: clamp(1rem, 1.8vw, 1.4rem);
+    }
+    .stats-bar {
+        font-size: 0.95rem;
+    }
+    .stats-bar-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 968px) {
+    .layer-section {
+        padding: 120px 6% 60px 6%;
+    }
+    .page-logo {
+        top: 24px;
+        left: 24px;
+    }
+    .page-logo img {
+        width: 130px;
+    }
+    .page-back {
+        top: 16px;
+        right: 16px;
+        width: 70px;
+        height: 70px;
+    }
+    .page-back img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .layer-title-box {
+        margin-bottom: 50px;
+    }
+
+    /* Kartu merah: tinggi menyesuaikan isi, ruang kiri untuk ikon bulat */
+    .card-row {
+        gap: 30px;
+    }
+    .oc-card {
+        height: auto;
+        min-height: 180px;
+        padding-bottom: 70px;
+        margin-left: 35px;
+        width: calc(100% - 35px);
+        max-width: 340px;
+    }
+
+    /* Foto + teks: foto dipotong (cover) supaya teks tetap muat */
+    .photo-full {
+        min-height: 480px;
+        object-fit: cover;
+    }
+    .photo-section::after {
+        height: 80%;
+    }
+    .photo-overlay-text {
+        bottom: 30px;
+        padding: 0 24px;
+    }
+    .photo-overlay-text p {
+        font-size: 0.95rem;
+    }
+
+    .stats-section {
+        padding: 16px;
+    }
+    .stats-photo {
+        aspect-ratio: 4 / 3;
+    }
+    .stats-number {
+        font-size: clamp(2.6rem, 8vw, 4rem);
+    }
+    .stats-label {
+        font-size: clamp(1rem, 3vw, 1.4rem);
+    }
+
+    /* Kartu kutipan: teks selebar kartu karena foto disembunyikan */
+    /* Kartu kutipan: foto petani tetap tampil di kanan, teks 60% lebar */
+    .quote-card {
+        padding: 40px 60px;
+        min-height: 360px;
+    }
+    .quote-icon-img-close {
+        margin-left: min(450px, 50vw);
+    }
+    .quote-line {
+        width: 120px;
+    }
+}
+
+/* Handphone */
+@media (max-width: 600px) {
+    .layer-section {
+        padding: 100px 5% 50px 5%;
+    }
+    .page-logo {
+        top: 18px;
+        left: 16px;
+    }
+    .page-logo img {
+        width: 105px;
+    }
+    .page-back {
+        top: 10px;
+        right: 8px;
+        width: 60px;
+        height: 60px;
+    }
+    .page-back img {
+        width: 34px;
+        height: 34px;
+    }
+
+    .layer-title-box {
+        margin-bottom: 40px;
+    }
+    .layer-title-box h1 {
+        font-size: 1.6rem;
+    }
+
+    .oc-card {
+        max-width: none;
+        padding: 14px 20px 70px 70px;
+    }
+    .oc-card h3 {
+        font-size: 24px;
+    }
+    .oc-more {
+        left: 70px;
+    }
+    .oc-icon {
+        width: 84px;
+        height: 84px;
+        left: -30px;
+        top: 36px;
+    }
+    .oc-card {
+        margin-left: 30px;
+        width: calc(100% - 30px);
+    }
+
+    .photo-full {
+        min-height: 560px;
+    }
+    .photo-section::before {
+        height: 70px;
+    }
+    .photo-section::after {
+        height: 90%;
+    }
+    .photo-overlay-text {
+        bottom: 24px;
+        padding: 0 16px;
+    }
+    .photo-overlay-text h2 {
+        font-size: 1.9rem;
+        margin-bottom: 10px;
+    }
+    .photo-overlay-text p {
+        font-size: 0.85rem;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+
+    .stats-section {
+        padding: 12px;
+        gap: 14px;
+    }
+    .stats-photo {
+        aspect-ratio: 4 / 5;
+    }
+    .stats-overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+    }
+    .stats-number {
+        font-size: 2.6rem;
+    }
+    .stats-label {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .stats-bar {
+        font-size: 0.85rem;
+        padding: 6px 14px;
+        gap: 8px;
+        max-width: 100%;
+    }
+    .stats-bar-text {
+        font-size: 1.2rem;
+    }
+    .stats-caption {
+        padding: 14px;
+    }
+    .stats-caption-box {
+        padding: 14px 16px;
+        font-size: 0.9rem;
+        border-radius: 18px;
+    }
+
+    .quote-card {
+        padding: 30px 46px 60px 46px;
+        min-height: 0;
+    }
+    .quote-text {
+        max-width: 100%;
+    }
+    .quote-icon-img-close {
+        margin-left: auto;
+    }
+    /* Urutan di HP: kutipan, FOTO, nama, garis merah, ikon tutup.
+       display: contents membuat teks dan nama menjadi anak langsung kartu, jadi bisa diurutkan dengan order */
+    .quote-slider,
+    .quote-slide.active {
+        display: contents;
+    }
+    .quote-text { order: 1; }
+    .quote-icon-img-close { order: 2; margin: 10px 0 0 auto; }
+    .quote-photo {
+        order: 3;
+        position: relative;
+        align-self: center;
+        height: 230px;
+        width: auto;
+        max-width: 80%;
+        margin: 14px 0 0 0;
+        object-position: bottom center;
+    }
+    .quote-author {
+        order: 4;
+        max-width: 100%;
+        margin-top: 14px;
+        font-size: 15px;
+    }
+    .quote-line { order: 5; margin-bottom: 0; }
+    .quote-icon-img-open,
+    .quote-icon-img-close {
+        width: 30px;
+    }
+    .quote-text {
+        font-size: 15px;
+        line-height: 1.45;
+    }
+    .quote-arrow {
+        width: 30px;
+        height: 30px;
+    }
+    .quote-arrow-left {
+        left: 6px;
+    }
+    .quote-arrow-right {
+        right: 6px;
+    }
+    .quote-decor-circle {
+        width: 40px;
+        height: 40px;
+        bottom: 14px;
+        left: 14px;
+    }
+}

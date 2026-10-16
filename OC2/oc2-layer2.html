@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OC 2 Layer 2 - Data, Traceability &amp; Monitoring</title>
+<link rel="stylesheet" href="oc2-layer2.css">
+<link rel="icon" type="image/png" href="../img/Favicon-WEI.png">
+</head>
+<body>
+
+    <section class="layer-section">
+        <a href="../index.html" class="page-back">
+            <img src="../img/icon-back.png" alt="Kembali">
+        </a>
+        <div class="page-logo">
+            <a href="../index.html">
+                <img src="../img/Logo WEI horizontal.png" alt="Logo Widya Erti Indonesia">
+            </a>
+        </div>
+
+        <div class="layer-title-box">
+            <div class="layer-title-line"></div>
+            <h1>Data, Traceability<br>&amp; Monitoring</h1>
+        </div>
+
+        <div class="card-row">
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Icon1.png" alt="More informed farm management" class="oc-icon-img"> </div>
+                <h3>More Informed Farm Management</h3>
+                <a href="OC2-Impact1.html"><button class="oc-more">More....</button></a>
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Icon2.png" alt="Clear land boundaries and zoning awareness" class="oc-icon-img"> </div>
+                <h3>Clear Land Boundaries &amp; Zoning Awareness</h3>
+                <a href="OC2-Impact2.html"><button class="oc-more">More....</button></a>
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Icon3.png" alt="Improved land clarity and traceability" class="oc-icon-img"> </div>
+                <h3>Improved Land Clarity &amp; Traceability</h3>
+                <a href="OC2-Impact3.html"><button class="oc-more">More....</button></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-section">
+        <img src="../img/Peta.png" alt="Peta partisipatif petani" class="photo-full">
+        <div class="photo-overlay-text">
+            <h2>Participatory Mapping</h2>
+            <p>Farmers are actively involved in the mapping process. We have developed an integrated dashboard that brings farmer and plantation data together, making farm locations, land areas, and farmer profiles easier to track and understand. The dashboard supports more effective monitoring, planning, and informed decision-making.</p>
+            <a href="https://wei.maps.arcgis.com/apps/dashboards/4e8a3f655dee48ff8e3d4faaf3d97aaa" target="_blank" rel="noopener noreferrer"><button class="photo-more">More....</button></a>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-left">
+            <div class="stats-photo">
+                <img src="../img/Sawit1.png" alt="Lahan perkebunan kelapa sawit">
+                <div class="stats-overlay">
+                    <div class="stats-number">12,700+</div>
+                    <div class="stats-label">FARMERS MAPPED</div>
+                    <div class="stats-bar">
+                        <img src="../img/dots-stats.png" alt="Icon" class="stats-dot-img">
+                      <div class="stats-bar-text">  <strong>16,500+ ha</strong> </div> LAND MAPPED
+                    </div>
+                </div>
+            </div>
+            <div class="stats-caption">
+                <div class="stats-caption-box">
+                    Building the data foundation to improve traceability, farm management, and informed decision-making across Riau.
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-right">
+            <div class="quote-card">
+                <img src="../img/quotes-open.png" alt="Quote" class="quote-icon-img-open">
+
+                <button class="quote-arrow quote-arrow-left" id="quotePrev" aria-label="Sebelumnya">&#10094;</button>
+
+                <div class="quote-slider" id="quoteSlider">
+                    <div class="quote-slide active" data-photo="../img/Tokoh-OC2-Layer2-A.png">
+                        <p class="quote-text">“At first, we thought the technology would only make things more complicated. Now, we see how it can help us understand and protect our own farms.”
+</p>
+                        <p class="quote-author"><b>— Indra Surya Darma, AGPSM Farmers Group Manager</b></p>
+                    </div>
+
+                    <div class="quote-slide" data-photo="../img/Tokoh-OC2-Layer2-B.png">
+                        <p class="quote-text">"I used to roughly estimate my farm boundaries. Now, with just my phone, I can identify the farm zones and distinguish safe areas from red zones. My farm is clearer and easier to protect."</p>
+                        <p class="quote-author"><b>— Sahrul, Sumber Dadi</b></p>
+                    </div>
+
+                    <div class="quote-slide" data-photo="../img/Tokoh 3.png">
+                        <p class="quote-text">"Through Farmer Field School, I learned practices that keep my farm productive while taking care of the soil."</p>
+                        <p class="quote-author"><b>— Nama Petani 3, Kelompok Tani 3</b></p>
+                    </div>
+
+                </div>
+
+                <button class="quote-arrow quote-arrow-right" id="quoteNext" aria-label="Berikutnya">&#10095;</button>
+
+                <div class="quote-line"></div>
+                <img src="../img/quotes-close.png" alt="Quote" class="quote-icon-img-close">
+
+                <img id="quotePhoto" src="../img/Tokoh-OC2-Layer2-A.png" alt="Petani" class="quote-photo">
+                <div class="quote-decor-circle"></div>
+            </div>
+        </div>
+    </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slides = document.querySelectorAll('#quoteSlider .quote-slide');
+        var photo = document.getElementById('quotePhoto');
+        var prevBtn = document.getElementById('quotePrev');
+        var nextBtn = document.getElementById('quoteNext');
+        var current = 0;
+        var timer;
+
+        function showSlide(index) {
+            slides.forEach(function (slide) {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+
+            var newPhoto = slides[index].getAttribute('data-photo');
+            photo.classList.add('fading');
+            setTimeout(function () {
+                photo.src = newPhoto;
+                photo.classList.remove('fading');
+            }, 300);
+        }
+
+        function goNext() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        function goPrev() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(goNext, 6000);
+        }
+
+        nextBtn.addEventListener('click', function () {
+            goNext();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', function () {
+            goPrev();
+            resetTimer();
+        });
+
+        resetTimer();
+    });
+</script>
+</body>
+</html>
