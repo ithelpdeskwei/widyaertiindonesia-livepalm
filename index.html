@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Palm - Widya Erti Indonesia</title>
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="img/Favicon-WEI.png">
+</head>
+<body>
+
+    <section class="hero-section">
+
+        <div class="lang-switch">
+    <svg class="lang-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/>
+        <path d="M3 12h18"/>
+        <path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18z"/>
+    </svg>
+    <a href="index.html" class="lang-link active">EN</a>
+    <span class="lang-divider">|</span>
+    <a href="Bahasa-Indonesia/index.html" class="lang-link">ID</a>
+</div>
+        <div class="left-content">
+            <div class="logo-container">
+               <img src="img/Logo WEI horizontal.png" alt="Logo Widya Erti Indonesia" class="logo-img"> 
+<div class="tagline">Educate - Empower - Engage</div>           </div>
+            <div class="subtitle-box"> <h1>LIVE<br>PALM</h1></div>
+            
+            
+                <p>BEYOND CERTIFICATION</p>
+        </div>
+
+        <!-- Bagian Kanan: Diagram Lingkar Berdempetan -->
+        <div class="right-diagram">
+            <!-- 4 Bulatan Diagonal (Abu-Abu dengan Garis Putih di Atasnya, Hanya di Sela OC) -->
+            <div class="diag-circle pos-diag-tl" id="gray-tl"><div class="diag-outline"></div></div>
+            <div class="diag-circle pos-diag-tr" id="gray-tr"><div class="diag-outline"></div></div>
+            <div class="diag-circle pos-diag-br" id="gray-br"><div class="diag-outline"></div></div>
+            <div class="diag-circle pos-diag-bl" id="gray-bl"><div class="diag-outline"></div></div>
+
+            <!-- SVG Panah Blok Tebal Dua Arah -->
+            <svg class="diagram-svg" viewBox="0 0 600 600">
+                <defs>
+                    <!-- Definisi Bentuk Panah Blok -->
+                    <path id="custom-arrow" d="M 0,-52 L 24,-18 L 10,-18 L 10,18 L 24,18 L 0,52 L -24,18 L -10,18 L -10,-18 L -24,-18 Z" fill="#b92025" />
+                </defs>
+
+                <!-- Panah di Celah Diagonal Antar OC -->
+                <!-- OC 1 & OC 2 (Kanan Atas) -->
+                <g class="arrow-btn" id="arrow-tr" onclick="toggleBubble('bubble-tr')">
+                    <use href="#custom-arrow" x="405" y="195" transform="rotate(135, 405, 195)" />
+                </g>
+                
+                <!-- OC 2 & OC 3 (Kanan Bawah) -->
+                <g class="arrow-btn" id="arrow-br" onclick="toggleBubble('bubble-br')">
+                    <use href="#custom-arrow" x="405" y="405" transform="rotate(225, 405, 405)" />
+                </g>
+                
+                <!-- OC 3 & OC 4 (Kiri Bawah) -->
+                <g class="arrow-btn" id="arrow-bl" onclick="toggleBubble('bubble-bl')">
+                    <use href="#custom-arrow" x="195" y="405" transform="rotate(315, 195, 405)" />
+                </g>
+                
+                <!-- OC 4 & OC 1 (Kiri Atas) -->
+                <g class="arrow-btn" id="arrow-tl" onclick="toggleBubble('bubble-tl')">
+                    <use href="#custom-arrow" x="195" y="195" transform="rotate(45, 195, 195)" />
+                </g>
+            </svg>
+
+            <!-- Node OC 1 (Atas) -->
+            <div class="node-wrapper pos-oc1">
+                <span class="badge-oc">OC 1</span>
+                <a href="OC1/oc1-layer2.html" class="outer-node oc1-node" style="text-decoration:none;">
+                    <img src="img/Icon-OC1.png" alt="Icon OC1" class="oc-icon-node">
+                    <span class="oc-text">Knowledge Grows, Practices Change</span>
+                    <span class="oc-text oc1-text-hover">Farmer Capacity for Regenerative Practices</span>
+                </a>
+            </div>
+
+            <!-- Node OC 2 (Kanan) -->
+            <div class="node-wrapper pos-oc2">
+                <span class="badge-oc">OC 2</span>
+                <a href="OC2/oc2-layer2.html" class="outer-node oc2-node" style="text-decoration:none;">
+             <img src="../img/Icon-OC2.png" alt="Icon OC2" class="oc-icon-node">
+                    <span class="oc-text">Supply Chains Traced, Data-Driven Action</span>
+                    <span class="oc-text oc2-text-hover">Data, Traceability &amp; Monitoring</span>
+                </a>
+            </div>
+
+            <!-- Node OC 3 (Bawah) -->
+          <div class="node-wrapper pos-oc3">
+    <span class="badge-oc">OC 3</span>
+    
+    <!-- Bungkus bagian ini dengan tag <a> -->
+    <a href="OC3/oc3-Layer2.html" style="text-decoration: none; color: inherit;">
+        <div class="outer-node oc3-node">
+            <img src="../img/icon-OC3.png" alt="Icon OC3" class="oc-icon-node">
+            <span class="oc-text">Beyond Compliance, Organized to Serve 
+</span>
+            <span class="oc-text oc3-text-hover">Institutional Strengthening &amp; Certification Readiness</span>
+        </div>
+    </a>
+       
+</div>
+<!-- Node OC 4 (Kiri) -->
+<div class="node-wrapper pos-oc4">
+    <span class="badge-oc">OC 4</span>
+    <a href="OC4/oc4-Layer2.html" style="text-decoration: none; color: inherit;">
+        <div class="outer-node oc4-node">
+            <img src="img/icon-OC4.png" alt="Icon OC4" class="oc-icon-node">
+            <span class="oc-text">Women Empowered, Incomes Increased</span>
+            <span class="oc-text oc4-text-hover">Business Development &amp; Women’s Economic Empowerment</span>
+        </div>
+    </a>
+</div>
+
+            <!-- Lingkaran Pusat -->
+            <div class="center-node">
+                <h3>LIVE PALM</h3>
+                <p>Integrated pathway towards sustainable livelihood</p>
+            </div>
+
+            <!-- Bubble Keterangan -->
+            <div class="bubble-tl" id="bubble-tl">Business opportunities create added value and economic benefits that contribute to more sustainable farmer livelihoods.</div>
+            <div class="bubble-tr" id="bubble-tr">Training and engaging farmers creates the farmer base and information needed for mapping, tracing, and data collection.</div>
+            <div class="bubble-br" id="bubble-br">Reliable member data provides farmer organizations with a stronger foundation for targeted services and business development.</div>
+            <div class="bubble-bl" id="bubble-bl">Strengthened entities give farmer and women’s groups opportunities to supply, produce, and participate in value chains.</div>
+        </div>
+    </section>
+
+    <script>
+        var pairs = {
+            'bubble-tl': 'gray-tl',
+            'bubble-tr': 'gray-tr',
+            'bubble-br': 'gray-br',
+            'bubble-bl': 'gray-bl'
+        };
+
+        function toggleBubble(bubbleId) {
+            var grayId = pairs[bubbleId];
+            var bubble = document.getElementById(bubbleId);
+            var gray = document.getElementById(grayId);
+            var isShowing = bubble.classList.contains('show');
+
+            Object.keys(pairs).forEach(function (bId) {
+                document.getElementById(bId).classList.remove('show');
+                document.getElementById(pairs[bId]).classList.remove('gray-hidden');
+            });
+
+            if (!isShowing) {
+                bubble.classList.add('show');
+                gray.classList.add('gray-hidden');
+            }
+        }
+    </script>
+</body>
+</html>
