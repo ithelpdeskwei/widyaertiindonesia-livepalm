@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff; 
+}
+
+/* ===== CONTAINER UTAMA (Penuh 1 Halaman) ===== */
+.detail-card {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; 
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+/* ===== TOMBOL BACK ===== */
+.detail-back {
+    position: absolute;
+    filter: brightness(50%); 
+    top: 30px;
+    right: 40px; 
+    z-index: 5;
+    width: 35px; 
+    height: 35px; 
+    background: transparent; 
+    box-shadow: none; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+.detail-back:hover { 
+    transform: scale(1.08); 
+}
+
+.detail-back img { 
+    width: 50px; 
+    height: auto; 
+}
+
+/* ===== FOTO KIRI ===== */
+.detail-photo {
+    position: relative;
+    background: linear-gradient(to right, rgba(15, 45, 95, 0.75) 0%, rgba(15, 45, 95, 0.2) 10%, rgba(0, 0, 0, 0) 70%), 
+                url('../../img/OC4-Impact3.png') no-repeat center center/cover;
+    border-top-right-radius: 120px; 
+    margin-top: 20px; 
+    min-height: calc(100vh - 40px); 
+}
+
+.detail-photo-logo {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    z-index: 2;
+}
+.detail-photo-logo img { 
+    width: 200px; height: auto; display: block; 
+}
+
+/* Aksen kapsul merah di foto */
+.detail-photo-accent {
+    position: absolute;
+    top: 20%;
+    right: 2%; 
+    width: 26px;
+    height: 90px;
+    background-color: #cc2b2b;
+    border-radius: 20px 20px 20px 20px; 
+    box-shadow: -4px 6px 14px rgba(0,0,0,0.3);
+    z-index: 3;
+}
+
+/* ===== KONTEN KANAN ===== */
+.detail-content {
+    padding: 60px 80px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0f2d5f;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.detail-subtitle {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #1a3b6e;
+    margin-bottom: 30px;
+}
+
+.detail-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333333;
+    text-align: justify;
+    margin-bottom: 16px;
+}
+
+/* ===== "THE SHIFT" HEADING ===== */
+.shift-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0 20px 0;
+}
+.shift-dot {
+    width: 8px;
+    height: 26px;
+    background-color: #cc2b2b;
+    border-radius: 5px;
+    flex-shrink: 0;
+}
+.shift-heading h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f2d5f;
+}
+
+/* ===== FROM / TO BOXES ===== */
+.shift-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.shift-content-row {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    gap: 18px; 
+}
+
+.shift-icon{
+    width: 40px; 
+    height: auto;
+    flex-shrink: 0; 
+}
+
+
+
+.shift-box {
+    flex: 1;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+.shift-box-header {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    padding: 12px 0;
+}
+.shift-box.from { background-color: #cc2b2b; }
+.shift-box.from .shift-box-header { background-color: rgba(0,0,0,0.15); }
+.shift-box.to { background-color: #0f2d5f; }
+.shift-box.to .shift-box-header { background-color: rgba(0,0,0,0.15); }
+
+.icon-row {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 6px;
+}
+.icon-row svg { width: 16px; height: 20px; opacity: 0.9; }
+.shift-box.from svg { fill: rgba(255,255,255,0.9); }
+.shift-box.to svg { fill: rgba(255,255,255,0.9); }
+
+.shift-arrow {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shift-arrow img{
+    width: 100px;
+    z-index: 2;
+}
+.shift-box-body p {
+    color: #ffffff;
+    font-size: 0.95rem; 
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: left; 
+    margin: 0;
+}
+
+/* ==========================================================
+   RESPONSIVE + 1 LAYAR TANPA SCROLL
+   Ukuran asli jadi batas atas, hanya mengecil jika layar kurang tinggi
+   ========================================================== */
+
+/* ---------- Handphone dan tablet portrait ---------- */
+@media (max-width: 968px) {
+    html, body { height: 100%; overflow: hidden; margin: 0; }
+
+    .detail-card {
+        --u: min(1svh, 2.2vw);
+        height: 100vh;
+        height: 100svh;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .detail-photo {
+        flex: 0 0 min(320px, 34svh);
+        min-height: 0;
+        margin-top: 0;
+        border-top-right-radius: min(80px, calc(var(--u)*8));
+    }
+    .detail-photo-logo { top: min(24px, calc(var(--u)*2.4)); left: min(24px, calc(var(--u)*2.4)); }
+    .detail-photo-logo img { width: min(160px, calc(var(--u)*17)); }
+    .detail-back { top: min(24px, calc(var(--u)*2.4)); right: min(24px, calc(var(--u)*2.4)); }
+    .detail-back img { width: min(50px, calc(var(--u)*6)); }
+    .detail-photo-accent {
+        top: auto;
+        right: 12%;
+        bottom: -11px;
+        width: 70px;
+        height: 22px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .detail-content {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow: hidden;
+        justify-content: space-evenly;
+        padding: calc(var(--u)*2.6) min(40px, calc(var(--u)*2.8)) calc(var(--u)*2 + env(safe-area-inset-bottom));
+    }
+
+    .detail-title { font-size: min(2.2rem, calc(var(--u)*3.4)); margin-bottom: 0; }
+    .detail-subtitle { font-size: min(1.4rem, calc(var(--u)*2.2)); margin-bottom: 0; }
+    .detail-text p {
+        font-size: min(1rem, calc(var(--u)*1.75));
+        line-height: 1.5;
+        text-align: left;
+        margin: 0;
+    }
+    .detail-text p + p { margin-top: calc(var(--u)*1); }
+
+    .shift-heading { margin: 0; }
+    .shift-heading h2 { font-size: min(1.5rem, calc(var(--u)*2.5)); }
+    .shift-dot { height: min(26px, calc(var(--u)*3.4)); }
+
+    .shift-row { flex-direction: row; align-items: stretch; gap: 6px; margin: 0; }
+    .shift-arrow { width: 20px; height: auto; align-self: center; margin: 0 4px; transform: none; }
+    .shift-arrow img { width: min(40px, calc(var(--u)*5)); }
+
+    .shift-box-header { padding: calc(var(--u)*1.2) 0; font-size: min(0.8rem, calc(var(--u)*1.5)); }
+
+    /* Ikon di samping teks */
+    .shift-content-row {
+        flex-direction: row;
+        justify-content: center;
+        gap: calc(var(--u)*1);
+        padding: calc(var(--u)*1.6) calc(var(--u)*1.2);
+    }
+    .shift-icon { width: min(40px, calc(var(--u)*4.8)); height: auto; flex-shrink: 0; }
+    .shift-box-body p { font-size: min(0.95rem, calc(var(--u)*1.5)); text-align: left; }
+    .shift-box-body p br { display: none; }
+}
+
+/* ---------- Desktop dan tablet landscape ---------- */
+/* Ukuran asli (judul 2.8rem, padding 60px 80px, dst) dipakai penuh di layar sekitar 1600x800px,
+   lebih kecil dari itu ukuran mengecil otomatis agar halaman tetap 1 layar tanpa scroll */
+@media (min-width: 969px) {
+    html, body { height: 100%; overflow: hidden; }
+
+    .detail-card {
+        --u: min(1vh, 0.5vw);
+        height: 100vh;
+        height: 100svh;
+        min-height: 0;
+        overflow: hidden;
+        grid-template-rows: 100%;
+    }
+
+    .detail-photo { min-height: 0; height: calc(100% - 20px); }
+
+    .detail-content {
+        min-height: 0;
+        overflow: hidden;
+        justify-content: center;
+        padding: min(60px, calc(var(--u)*7.5)) min(80px, calc(var(--u)*10.0));
+    }
+
+    .detail-title { font-size: min(2.8rem, calc(var(--u)*5.6)); margin-bottom: min(14px, calc(var(--u)*1.75)); }
+    .detail-subtitle { font-size: min(1.4rem, calc(var(--u)*2.8)); margin-bottom: min(30px, calc(var(--u)*3.75)); }
+    .detail-text p {
+        font-size: min(1rem, max(11px, calc(var(--u)*2.0)));
+        line-height: 1.7;
+        margin-bottom: min(16px, calc(var(--u)*2.0));
+    }
+
+    .shift-heading { margin: min(30px, calc(var(--u)*3.75)) 0 min(20px, calc(var(--u)*2.5)); }
+    .shift-heading h2 { font-size: min(1.5rem, calc(var(--u)*3.0)); }
+    .shift-dot { height: min(26px, calc(var(--u)*3.25)); }
+
+    .shift-box-header { font-size: min(0.8rem, max(10px, calc(var(--u)*1.6))); padding: min(12px, calc(var(--u)*1.5)) 0; }
+    .shift-content-row {
+        padding-top: min(38px, calc(var(--u)*4.75));
+        padding-bottom: min(38px, calc(var(--u)*4.75));
+        gap: min(18px, calc(var(--u)*2.25));
+    }
+    .shift-icon { width: min(40px, calc(var(--u)*6.88)); height: auto; flex-shrink: 0; }
+    .shift-box-body p { font-size: min(0.95rem, max(11px, calc(var(--u)*1.9))); }
+    .shift-arrow img { width: min(100px, calc(var(--u)*12.5)); }
+}
+
+/* Laptop kecil dan tablet landscape */
+@media (min-width: 969px) and (max-width: 1200px) {
+    .detail-content { padding-left: min(40px, calc(var(--u)*5.0)); padding-right: min(40px, calc(var(--u)*5.0)); }
+    .detail-title { font-size: min(2.3rem, calc(var(--u)*4.6)); }
+    .shift-arrow img { width: min(40px, calc(var(--u)*5.0)); }
+}
+
+/* Handphone: batas ukuran lebih kecil dari tablet */
+@media (max-width: 600px) {
+    .detail-photo { flex-basis: min(250px, 34svh); border-top-right-radius: 0; }
+    .detail-photo-logo img { width: min(120px, calc(var(--u)*17)); }
+    .detail-back img { width: min(40px, calc(var(--u)*6)); }
+    .detail-title { font-size: min(1.8rem, calc(var(--u)*3.4)); }
+    .detail-subtitle { font-size: min(1.15rem, calc(var(--u)*2.2)); }
+    .detail-text p { font-size: min(0.95rem, calc(var(--u)*1.75)); }
+    .shift-heading h2 { font-size: min(1.3rem, calc(var(--u)*2.5)); }
+    .shift-box-header { font-size: min(0.7rem, calc(var(--u)*1.5)); }
+    .shift-icon { width: min(40px, calc(var(--u)*4.8)); }
+    .shift-box-body p { font-size: min(0.75rem, calc(var(--u)*1.5)); }
+}
+@media (max-width: 600px) {
+    .detail-card { --u: min(1svh, 2vw); }
+}
+
+/* Posisi foto di HP dan tablet: ubah angka 15% (kecil = bagian atas foto, besar = bagian bawah) */
+@media (max-width: 968px) {
+    .detail-photo {
+        background-position: 0 0, 50% 80%;
+    }
+}
+
+/* Tombol back di handphone: putih (tidak digelapkan) */
+@media (max-width: 600px) {
+    .detail-back { top: 28px; right: 14px; filter: brightness(100%); }
+}
+
+/* Kotak From/To: tinggi sama, isi selalu di tengah.
+   Mobile: ikon di atas tengah. Desktop: ikon di kiri. */
+.shift-row { align-items: stretch; }
+.shift-box { display: flex; flex-direction: column; }
+.shift-box-body { flex: 1; display: flex; align-items: center; justify-content: center; }
+.shift-box-body .shift-content-row {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: column;
+    text-align: center;
+}
+.shift-box-body .shift-content-row p { text-align: center; }
+.shift-box-body p br { display: none; }
+.shift-box-body p { flex: 0 1 auto; min-width: 0; }
+
+@media (min-width: 969px) {
+    .shift-box-body .shift-content-row {
+        padding-top: min(24px, calc(var(--u)*2.6));
+        padding-bottom: min(24px, calc(var(--u)*2.6));
+        gap: min(14px, calc(var(--u)*1.6));
+        flex-direction: row;          /* ikon di kiri */
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .shift-box-body .shift-content-row p {
+        text-align: left;
+        flex: 1 1 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .shift-box-body .shift-content-row { padding-left: 8px; padding-right: 8px; }
+}
+
+.shift-arrow {
+    align-self: center;   /* tengah vertikal antara kotak merah dan biru */
+    height: auto;
+    margin: 0;
+    position: relative;
+    z-index: 2;           /* panah di atas kotak, tidak tertutup */
+}

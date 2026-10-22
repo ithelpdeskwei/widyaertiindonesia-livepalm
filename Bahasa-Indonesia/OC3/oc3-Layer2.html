@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Palm - Widya Erti Indonesia - Penguatan Organisasi dan Kesiapan Sertifikasi</title>
+<link rel="stylesheet" href="../../Bahasa-Indonesia/OC3/oc3-layer2.css">
+        <link rel="icon" type="image/png" href="../../img/Logo-Favicon.png">
+
+</head>
+<body>
+
+    <section class="layer-section">
+        <a href="../index.html" class="page-back">
+    <img src="../../img/icon-back.png" alt="Kembali">
+</a>
+       <div class="page-logo">
+       <a href="../index.html">     <img src="../../img/Logo WEI horizontal.png" alt="Logo Widya Erti Indonesia"> </a>
+    </div> 
+
+        <div class="layer-title-box">
+            <div class="layer-title-line"></div>
+            <h1>Penguatan Organisasi dan Kesiapan Sertifikasi</h1>
+        </div>
+
+        <div class="card-row">
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../../img/Icon1.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+              <h3>Menguatnya kelompok tani dan aksi kolektif</h3>
+             <a href="OC3-Impact1.html">   <button class="oc-more">More....</button> </a>
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../../img/Icon3.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+                <h3 class="expanded">Meningkatnya Kesiapan Sertifikasi ISPO & RSPO</h3>
+              <a href="OC3-Impact2.html">  <button class="oc-more">More....</button> </a>
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../../img/Icon2.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+                <h3>Perluasan Akses Pasar</h3>
+               <a href="OC3-Impact3.html"> <button class="oc-more">More....</button> </a>
+            </div>
+        </div>
+    </section>
+<section class="photo-section">
+    <img src="../../img/Pengajar.png" alt="Deskripsi foto" class="photo-full">
+    <div class="photo-overlay-text">
+        <h2>Penguatan Manajemen dan Layanan Kelompok Petani</h2>
+        <p>Sertifikasi bukanlah tujuan akhir. Bagi LIVE PALM, proses menuju sertifikasi menjadi kesempatan untuk membangun kelompok petani yang lebih kuat, tertata, dan mampu memberikan manfaat nyata bagi anggotanya serta bersama mewujudkan praktik pertanian yang berkelanjutan.
+</p>
+       <a href="Strength.html"><button class="photo-more">More....</button></a>
+    </div>
+</section>
+
+
+<section class="stats-section">
+    <div class="stats-left">
+        <div class="stats-photo">
+            <img src="../../img/Petani-Rame.png" alt="Petani terlatih">
+            <div class="stats-overlay">
+      <div class="stat-item">
+    <div class="stats-number">11</div>
+    <div class="stats-label">Organisasi Petani</div>
+</div>
+<div class="stat-item">
+    <div class="stats-number">1,900+</div>
+    <div class="stats-label">Petani Tersertifikasi</div>
+</div>
+            </div>
+        </div>
+<div class="stats-caption">
+   
+</div>
+    </div>
+
+    <div class="stats-right">
+    <div class="quote-card">
+        <img src="../../img/quotes-open.png" alt="Quote" class="quote-icon-img-open">
+
+        <button class="quote-arrow quote-arrow-left" id="quotePrev" aria-label="Sebelumnya">&#10094;</button>
+
+        <div class="quote-slider" id="quoteSlider">
+            <div class="quote-slide active" data-photo="../../img/Petani-OC3-Layer2-A.png">
+                <p class="quote-text">"Through WEI’s support, farmers received training in sustainable oil palm cultivation and established KP BERJATI as a collective platform to advocate for farmers’ welfare.”
+</p>
+                <p class="quote-author"><b>— Suprayitno, KT Sawit Jaya</b></p>
+            </div>
+            <div class="quote-slide" data-photo="../../img/Petani-OC3-Layer2-B.png">
+                <p class="quote-text">"WEI’s support taught me that farming is not only about experience, but also about continuous learning and growth. Today, I’m trusted as a Group Manager, where I can share knowledge and support other farmers.”
+</p>
+                <p class="quote-author"><b>— Izhar, Group Manager Koperasi Konsumen Serba Usaha Surya Amanah</b></p>
+            </div>
+            <div class="quote-slide" data-photo="../../img/Petani-OC3-Layer2-C.png">
+                <p class="quote-text">"We used to manage our farms individually, without clear direction. Now, through our farmer group and learning about ISPO and RSPO standards, we have a better understanding of good farming practices, harvest management, and turning agricultural waste into fertiliser.” 
+</p>
+                <p class="quote-author"><b>— Sapon</b></p>
+            </div>
+        </div>
+
+        <button class="quote-arrow quote-arrow-right" id="quoteNext" aria-label="Berikutnya">&#10095;</button>
+
+        <div class="quote-line"></div>
+        <img src="../../img/quotes-close.png" alt="Quote" class="quote-icon-img-close">
+
+        <img id="quotePhoto" src="../../img/Petani-OC3-Layer2-A.png" alt="Petani" class="quote-photo">
+        <div class="quote-decor-circle"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slides = document.querySelectorAll('#quoteSlider .quote-slide');
+        var photo = document.getElementById('quotePhoto');
+        var prevBtn = document.getElementById('quotePrev');
+        var nextBtn = document.getElementById('quoteNext');
+        var current = 0;
+        var timer;
+
+        function showSlide(index) {
+            slides.forEach(function (slide) {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+
+            var newPhoto = slides[index].getAttribute('data-photo');
+            photo.classList.add('fading');
+            setTimeout(function () {
+                photo.src = newPhoto;
+                photo.classList.remove('fading');
+            }, 300);
+        }
+
+        function goNext() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        function goPrev() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(goNext, 6000);
+        }
+
+        nextBtn.addEventListener('click', function () {
+            goNext();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', function () {
+            goPrev();
+            resetTimer();
+        });
+
+        resetTimer();
+    });
+</script>
+
+
+</body>
+</html>

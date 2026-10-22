@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9e9e9;
+    overflow-x: hidden; /* Mencegah horizontal scroll karena elemen yang keluar jalur (seperti accent) */
+}
+
+/* ===== HERO FOTO ATAS ===== */
+.regen-hero {
+    position: relative;
+    width: 100%;
+    min-height: 480px; /* Diganti dari height ke min-height agar bisa menyesuaikan teks di mobile */
+    background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
+                url(../../img/Petani\ 1.png) no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 8% 60px 8%; /* Padding disesuaikan */
+    color: #ffffff;
+}
+
+.regen-hero-logo {
+    position: absolute;
+    top: 25px;
+    left: 6%;
+}
+.regen-hero-logo img {
+    width: 130px;
+    height: auto;
+    display: block;
+}
+
+.regen-hero-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.regen-hero-text h1 {
+    font-size: 60px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.regen-hero-line {
+    width: 220px;
+    height: 4px;
+    background-color: #cc2b2b;
+    margin: 20px auto 14px auto;
+}
+
+.regen-hero-text p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* ===== SECTION KARTU BIRU ===== */
+.regen-cards-section {
+    background-color: #d9d9d9;
+    padding: 100px 6% 120px 6%; /* Padding atas ditambah agar ikon kartu tidak menabrak section hero */
+}
+
+.regen-cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    row-gap: 120px; /* Jarak vertikal antar baris agar ikon bulat tidak tertutup saat di-stack (Mobile/Tablet) */
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+
+.regen-card {
+    position: relative;
+    background-color: #14305c;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 260px;
+    padding: 65px 20px 25px 20px; /* Padding atas disesuaikan untuk ruang ikon */
+    color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.regen-card-icon {
+    position: absolute;
+    top: -70px; /* Sedikit dinaikkan agar pas */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    background-color: #14305c;
+    border: 4px solid #e9e9e9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.regen-card-icon img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+}
+
+.regen-card h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 14px 0 10px 0;
+}
+
+.regen-card p {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    font-weight: 500;
+}
+.regen-card p strong {
+    font-weight: 800;
+}
+
+/* ===== KARTU PUTIH BAWAH ===== */
+.regen-bottom-card {
+    background-color: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 24px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    border: 3px solid #b4b4b4;
+}
+
+.regen-bottom-photo {
+    position: relative;
+    flex-shrink: 0;
+    width: 45%;
+    max-width: 480px;
+    border-radius: 24px;
+}
+
+.regen-bottom-photo-accent {
+    position: absolute;
+    top: 20%;
+    right: -12px; 
+    width: 24px;
+    height: 90px;
+    background-color: #cc2b2b;
+    border-radius: 20px;
+    box-shadow: -4px 6px 14px rgba(0,0,0,0.3);
+    z-index: 12;
+}
+
+.regen-bottom-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 24px;
+}
+
+.regen-bottom-text {
+    flex: 1;
+}
+
+.regen-bottom-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.regen-bottom-heading h2 {
+    font-size: 42px;
+    font-weight: 800;
+    color: #14305c;
+}
+
+.regen-bottom-subtitle {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #14305c;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.regen-bottom-desc {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: #14305c;
+    font-weight: 600;
+}
+
+/* ===== TOMBOL BACK POJOK KANAN ATAS ===== */
+.detail-back {
+    position: absolute;
+    top: 30px;
+    right: 40px; 
+    z-index: 10;
+    width: 60px; 
+    height: 60px; 
+    background: transparent; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.detail-back:hover { 
+    transform: scale(1.08); 
+}
+
+.detail-back img { 
+    width: 50px;
+    height: auto; 
+    display: block;
+}
+
+/* ========================================= */
+/* ===== RESPONSIVE MEDIA QUERIES ====== */
+/* ========================================= */
+
+/* TABLET (Ukuran Layar Menengah) */
+@media (max-width: 1024px) {
+    .regen-hero-text h1 {
+        font-size: 48px;
+    }
+    .regen-bottom-photo {
+        width: 40%;
+    }
+    .regen-bottom-heading h2 {
+        font-size: 32px;
+    }
+}
+
+/* MOBILE (Ponsel) */
+@media (max-width: 768px) {
+    /* Penyesuaian Tombol & Logo */
+    .detail-back {
+        top: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    .detail-back img {
+        width: 35px;
+    }
+    .regen-hero-logo {
+        top: 20px;
+        left: 5%;
+    }
+    .regen-hero-logo img {
+        width: 100px;
+    }
+
+    /* Penyesuaian Hero */
+    .regen-hero {
+        padding: 100px 5% 50px 5%;
+    }
+    .regen-hero-text h1 {
+        font-size: 36px;
+    }
+
+    .regen-hero-text {
+        padding-top: 100px;
+    }
+
+    /* Penyesuaian Kartu (Berubah jadi 1 kolom berbaris vertikal) */
+    .regen-cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        row-gap: 100px; /* Memberikan ruang ekstra untuk ikon bulat yang keluar dari kotak */
+    }
+    .regen-card {
+        max-width: 320px; /* Ukuran ideal kartu di HP */
+    }
+
+    /* Penyesuaian Kartu Bawah */
+    .regen-bottom-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    .regen-bottom-photo {
+        width: 100%;
+        max-width: 100%;
+    }
+    .regen-bottom-photo img {
+        aspect-ratio: 16/9; /* Menjaga agar foto tetap proporsional */
+    }
+    
+    /* Memindah posisi aksen merah di Mobile */
+    .regen-bottom-photo-accent {
+        right: 10%;
+        top: -10px; /* Dipindah ke atas kanan foto agar tidak aneh saat turun */
+        transform: rotate(90deg);
+        height: 70px;
+    }
+
+    .regen-bottom-heading {
+        justify-content: center;
+    }
+    .regen-bottom-heading h2 {
+        font-size: 28px;
+    }
+}
+
+/* MOBILE KECIL (Misal: iPhone SE) */
+@media (max-width: 480px) {
+    .regen-hero-text h1 {
+        font-size: 30px;
+    }
+    .regen-bottom-heading h2 {
+        font-size: 24px;
+    }
+    .regen-bottom-subtitle {
+        font-size: 1rem;
+    }
+}
