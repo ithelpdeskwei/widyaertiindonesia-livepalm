@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Palm - Widya Erti Indonesia - Business Development & Women's Economic Empowerment</title>
+<link rel="stylesheet" href="oc4-Layer2.css">
+        <link rel="icon" type="image/png" href="../img/Logo-Favicon.png">
+
+</head>
+<body>
+
+    <section class="layer-section">
+        <a href="../index.html" class="page-back">
+    <img src="../../img/icon-back.png" alt="Kembali">
+</a>
+       <div class="page-logo">
+        <a href="../index.html"><img src="../img/Logo WEI horizontal.png" alt="Logo Widya Erti Indonesia"> </a>
+    </div>
+
+        <div class="layer-title-box">
+            <div class="layer-title-line"></div>
+            <h1>Business Development & Women's Economic Empowerment</h1>
+        </div>
+
+        <div class="card-row">
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Icon1.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+                <h3>Strengthened business & entrepreneurial capacity</h3>
+              <a href="OC4-Impact1.html"> <button class="oc-more">More....</button></a> 
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Icon2.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+    <h3>Value creation from local resources</h3>
+          <a href="OC4-Impact2.html"><button class="oc-more">More....</button></a>      
+            </div>
+
+            <div class="oc-card">
+                <div class="oc-icon"> <img src="../img/Kepalan.png" alt=" Improved Farming" class="oc-icon-img"> </div>
+                <h3>Women as drivers of local economic growth</h3>
+               <a href="OC4-Impact3.html"> <button class="oc-more">More....</button></a>
+            </div>
+        </div>
+    </section>
+<section class="photo-section">
+    <img src="../img/KWT.png" alt="Deskripsi foto" class="photo-full">
+    <div class="photo-overlay-text">
+        <h2>Women and Enterprise Development</h2>
+        <p>Developing institution-based business units to create added value from local resources, while expanding economic opportunities and strengthening women's participation in sustainable economic activities.
+</p>
+        <a href="Women and Enterprise Development.html"><button class="photo-more">More....</button></a>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="stats-left">
+        <div class="stats-photo">
+            <img src="../img/Snack.png" alt="Petani terlatih">
+            <div class="stats-overlay">
+                <div class="stat-item">
+                    <div class="stats-number">2,253</div>
+                    <div class="stats-label">WOMEN INVOLVED</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stats-number">18</div>
+                    <div class="stats-label">BUSINESS UNITS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stats-number">73</div>
+                    <div class="stats-label">WOMEN FARMER GROUPS</div>
+                </div>
+            </div>
+        </div>
+<div class="stats-caption">
+    <div class="stats-caption-box">
+        Developing local enterprises across Riau to create added value, diversify livelihoods, and strengthen women’s economic participation.
+    </div>
+</div>
+    </div>
+
+    <div class="stats-right">
+    <div class="quote-card">
+        <img src="../img/quotes-open.png" alt="Quote" class="quote-icon-img-open">
+
+        <button class="quote-arrow quote-arrow-left" id="quotePrev" aria-label="Sebelumnya">&#10094;</button>
+
+        <div class="quote-slider" id="quoteSlider">
+            <div class="quote-slide active" data-photo="../img/KWT-A.png">
+                <p class="quote-text">"With the support we received, we learned everything from caring for chickens, providing feed, and maintaining their health to keeping records and managing our business finances.”
+<br> <br> <b>
+    — Mukinah, Restu Berjaya </b> </p>
+            </div>
+            <div class="quote-slide" data-photo="../img/KWT-B.png">
+                <p class="quote-text">“We are no longer women who wait. We are drivers of economic growth in our families and villages. Local potential is our strength, and our achievements are proof of what women can accomplish.”
+<b> <br> <br>
+— RIfkha Anisa
+</b> </p>
+            </div>
+          
+        </div>
+
+        <button class="quote-arrow quote-arrow-right" id="quoteNext" aria-label="Berikutnya">&#10095;</button>
+
+        <div class="quote-line"></div>
+        <img src="../img/quotes-close.png" alt="Quote" class="quote-icon-img-close">
+
+        <img id="quotePhoto" src="../img/KWT-A.png" alt="Petani" class="quote-photo">
+        <div class="quote-decor-circle"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var slides = document.querySelectorAll('#quoteSlider .quote-slide');
+        var photo = document.getElementById('quotePhoto');
+        var prevBtn = document.getElementById('quotePrev');
+        var nextBtn = document.getElementById('quoteNext');
+        var current = 0;
+        var timer;
+
+        function showSlide(index) {
+            slides.forEach(function (slide) {
+                slide.classList.remove('active');
+            });
+            slides[index].classList.add('active');
+
+            var newPhoto = slides[index].getAttribute('data-photo');
+            photo.classList.add('fading');
+            setTimeout(function () {
+                photo.src = newPhoto;
+                photo.classList.remove('fading');
+            }, 300);
+        }
+
+        function goNext() {
+            current = (current + 1) % slides.length;
+            showSlide(current);
+        }
+
+        function goPrev() {
+            current = (current - 1 + slides.length) % slides.length;
+            showSlide(current);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(goNext, 6000);
+        }
+
+        nextBtn.addEventListener('click', function () {
+            goNext();
+            resetTimer();
+        });
+
+        prevBtn.addEventListener('click', function () {
+            goPrev();
+            resetTimer();
+        });
+
+        resetTimer();
+    });
+</script>
+
+</body>
+</html>
