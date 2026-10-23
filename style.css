@@ -472,6 +472,34 @@ html, body {
     
     .lang-switch { font-size: 14px; top: 20px; }
     .lang-icon { width: 20px; height: 20px; }
+
+      .bubble-br {
+    padding-top: 60px;
+    font-size: 6px;
+}
+
+.bubble-bl {    
+  padding-top: 40px;
+    font-size: 6px;
+    padding-left:10px;
+    padding-right: -40px;
+
+
+}
+
+.bubble-tr {
+    padding-top: 40px;
+    font-size: 6px;
+    padding-left: -60px;
+    padding-right: -40px;
+}
+
+.bubble-tl {
+    padding-top: 40px;
+    font-size: 6px;
+    padding-left: 10px;
+    padding-right: -80px;
+}
 }
 
 /* FIX LAYAR PENDEK HP LANDSCAPE */
