@@ -461,10 +461,7 @@ html, body {
     .right-diagram {
         --d: 94vw; 
     }
-    .bubble-tl, .bubble-tr, .bubble-br, .bubble-bl {
-        padding-top: 40px;
-        font-size: 8px; 
-    }
+   
     .bubble-tl { padding: calc(var(--u) * 5) calc(var(--u) * 100) calc(var(--u) * 85) calc(var(--u) * 15); }
     .bubble-tr { padding: calc(var(--u) * 5) calc(var(--u) * 20) calc(var(--u) * 85) calc(var(--u) * 100); }
     .bubble-br { padding: calc(var(--u) * 135) calc(var(--u) * 30) calc(var(--u) * 20) calc(var(--u) * 115); }
@@ -472,6 +469,34 @@ html, body {
     
     .lang-switch { font-size: 14px; top: 20px; }
     .lang-icon { width: 20px; height: 20px; }
+
+     .bubble-br {
+    padding-top: 60px;
+    font-size: 6px;
+}
+
+.bubble-bl {    
+  padding-top: 60px;
+    font-size: 6px;
+    padding-left:20px;
+    padding-right: -40px;
+
+
+}
+
+.bubble-tr {
+    padding-top: 40px;
+    font-size: 6px;
+    padding-left: -60px;
+    padding-right: -40px;
+}
+
+.bubble-tl {
+    padding-top: 40px;
+    font-size: 6px;
+    padding-left: 10px;
+    padding-right: -100px;
+}
 }
 
 /* FIX LAYAR PENDEK HP LANDSCAPE */
