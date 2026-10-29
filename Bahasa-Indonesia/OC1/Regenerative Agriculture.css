@@ -58,28 +58,42 @@ body {
     font-weight: 500;
 }
 
-/* ===== SECTION KARTU BIRU ===== */
+/* ===== SECTION KARTU BIRU =====
+   Kartu rapat, lebar sama, tepi putih. Lingkaran ikon menjorok ke atas
+   dan sedikit menimpa bagian bawah hero.
+   Atur 3 angka ini bila perlu:
+   --icon-size : diameter lingkaran ikon
+   --icon-rise : berapa piksel lingkaran naik di atas kartu
+   --cards-gap : jarak antar kartu
+   Lingkaran menimpa hero sebesar (icon-rise dikurangi padding atas section).
+   ========================================================== */
 .regen-cards-section {
+    --icon-size: 135px;
+    --icon-rise: 48px;
+    --cards-gap: 14px;
     background-color: #d9d9d9;
-    padding: 100px 6% 120px 6%; /* Padding atas ditambah agar ikon kartu tidak menabrak section hero */
+    padding: 33px 4.5% 60px 4.5%; /* padding atas kecil: lingkaran menimpa hero 15px */
 }
 
 .regen-cards-row {
     display: flex;
+    flex-wrap: nowrap;            /* 4 kartu satu baris di desktop */
     justify-content: center;
-    gap: 24px;
-    row-gap: 120px; /* Jarak vertikal antar baris agar ikon bulat tidak tertutup saat di-stack (Mobile/Tablet) */
-    flex-wrap: wrap;
-    margin-bottom: 80px;
+    align-items: stretch;         /* tinggi semua kartu sama */
+    gap: var(--cards-gap);
+    margin-bottom: 24px;          /* jarak ke kartu putih di bawah */
 }
 
 .regen-card {
     position: relative;
     background-color: #14305c;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 260px;
-    padding: 65px 20px 25px 20px; /* Padding atas disesuaikan untuk ruang ikon */
+    border: 3px solid #ffffff;
+    border-radius: 14px;
+    flex: 1 1 0;                  /* lebar semua kartu sama */
+    min-width: 0;
+    max-width: 270px;
+    /* ruang untuk bagian lingkaran yang masuk ke kartu + sedikit jarak ke judul */
+    padding: calc(var(--icon-size) - var(--icon-rise) + 6px) 20px 28px 20px;
     color: #ffffff;
     text-align: center;
     display: flex;
@@ -89,34 +103,37 @@ body {
 
 .regen-card-icon {
     position: absolute;
-    top: -70px; /* Sedikit dinaikkan agar pas */
+    top: calc(var(--icon-rise) * -1);
     left: 50%;
     transform: translateX(-50%);
-    width: 130px;
-    height: 130px;
+    width: var(--icon-size);
+    height: var(--icon-size);
     background-color: #14305c;
-    border: 4px solid #e9e9e9;
+    border: 4px solid #ffffff;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .regen-card-icon img {
-    width: 75px;
-    height: 75px;
+    width: 58%;
+    height: 58%;
     object-fit: contain;
 }
 
 .regen-card h3 {
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 800;
-    margin: 14px 0 10px 0;
+    line-height: 1.15;
+    margin: 6px 0 10px 0;
 }
 
 .regen-card p {
-    font-size: 0.78rem;
-    line-height: 1.45;
+    font-size: 0.88rem;
+    line-height: 1.3;
     font-weight: 500;
+    text-align: justify;          /* sesuai desain; ganti ke center bila lebih suka */
+    width: 100%;
 }
 .regen-card p strong {
     font-weight: 800;
@@ -148,7 +165,7 @@ body {
 .regen-bottom-photo-accent {
     position: absolute;
     top: 20%;
-    right: -12px; 
+    right: -12px;
     width: 24px;
     height: 90px;
     background-color: #cc2b2b;
@@ -201,11 +218,11 @@ body {
 .detail-back {
     position: absolute;
     top: 30px;
-    right: 40px; 
+    right: 40px;
     z-index: 10;
-    width: 60px; 
-    height: 60px; 
-    background: transparent; 
+    width: 60px;
+    height: 60px;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -213,19 +230,34 @@ body {
     transition: transform 0.2s ease;
 }
 
-.detail-back:hover { 
-    transform: scale(1.08); 
+.detail-back:hover {
+    transform: scale(1.08);
 }
 
-.detail-back img { 
+.detail-back img {
     width: 50px;
-    height: auto; 
+    height: auto;
     display: block;
 }
 
 /* ========================================= */
 /* ===== RESPONSIVE MEDIA QUERIES ====== */
 /* ========================================= */
+
+/* LAPTOP KECIL: kartu biru jadi 2 kolom, tetap rapat.
+   Jarak vertikal 80px menjaga lingkaran ikon tidak menimpa kartu di atasnya. */
+@media (max-width: 1100px) {
+    .regen-cards-row {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 300px));
+        justify-content: center;
+        gap: 80px var(--cards-gap);
+    }
+    .regen-card {
+        width: 100%;
+        max-width: none;
+    }
+}
 
 /* TABLET (Ukuran Layar Menengah) */
 @media (max-width: 1024px) {
@@ -272,16 +304,17 @@ body {
         padding-top: 100px;
     }
 
-    /* Penyesuaian Kartu (Berubah jadi 1 kolom berbaris vertikal) */
+    /* Penyesuaian Kartu (1 kolom berbaris vertikal) */
+    .regen-cards-section {
+        --icon-size: 100px;
+        --icon-rise: 50px;
+        padding: 35px 5% 40px 5%;
+    }
     .regen-cards-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        row-gap: 100px; /* Memberikan ruang ekstra untuk ikon bulat yang keluar dari kotak */
+        grid-template-columns: minmax(0, 320px); /* ukuran ideal kartu di HP */
+        gap: 80px;
     }
-    .regen-card {
-        max-width: 320px; /* Ukuran ideal kartu di HP */
-    }
+    .regen-card { padding-left: 15px; padding-right: 15px; padding-bottom: 20px; }
 
     /* Penyesuaian Kartu Bawah */
     .regen-bottom-card {
@@ -297,7 +330,7 @@ body {
     .regen-bottom-photo img {
         aspect-ratio: 16/9; /* Menjaga agar foto tetap proporsional */
     }
-    
+
     /* Memindah posisi aksen merah di Mobile */
     .regen-bottom-photo-accent {
         right: 10%;
