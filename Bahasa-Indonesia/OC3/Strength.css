@@ -33,7 +33,7 @@ body {
     width: 100%;
     height: 560px;
     background-image: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.55)),
-                      url(../img/Pengajar.png);
+                      url(../../img/Pengajar.png);
     background-repeat: no-repeat;
     background-size: cover;
     /* Posisi foto hero: atur angka di --hero-pos (bagian paling atas file) */
