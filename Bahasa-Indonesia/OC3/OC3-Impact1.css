@@ -417,3 +417,16 @@ margin-top: -14px;
     }
     
 }
+
+/* ===== KOTAK FROM/TO: TINGGI SAMA (semua ukuran layar) ===== */
+.shift-row { align-items: stretch; }
+.shift-arrow { align-self: center; }
+.shift-box { display: flex; flex-direction: column; }
+.shift-box-header { flex-shrink: 0; }
+.shift-box-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.shift-box-body .shift-content-row { width: 100%; }
